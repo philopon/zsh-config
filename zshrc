@@ -84,6 +84,10 @@ __init_zinit () {
     zinit light zsh-users/zsh-autosuggestions
     zinit light zdharma-continuum/fast-syntax-highlighting
 
+    if __command_exist python3; then
+        path=($path[@] $ZSH_CONFIG_BASE/compat/python3)
+    fi
+
     zinit ice from"gh-r" as"program" pick"*/peco"
     zinit light "peco/peco"
 
@@ -98,6 +102,8 @@ __init_zinit () {
 
     zinit ice from"gh-r" as"program" mv"direnv* -> direnv"
     zinit light "direnv/direnv"
+
+    path[$path[(i)$ZSH_CONFIG_BASE/compat/python3]]=()
 }
 
 
