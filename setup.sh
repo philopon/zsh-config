@@ -19,8 +19,9 @@ install_zsh () {
 }
 
 clone_config() {
+    cd ~
     git clone https://github.com/philopon/zsh-config.git ~/.config/zsh
-    ln -s .config/zsh/zshrc .zshrc
+    ln -sf .config/zsh/zshrc .zshrc
 }
 
 install_zsh
