@@ -3,6 +3,7 @@
 - curl or wget
 - bash
 - git
+- unzip or python3
 
 ## installation
 
