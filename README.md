@@ -3,7 +3,6 @@
 - curl or wget
 - bash
 - git
-- unzip
 
 ## installation
 
