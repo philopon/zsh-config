@@ -7,7 +7,7 @@ export LS_COLORS="*.arw=38;5;133:*.bmp=38;5;133:*.cbr=38;5;133:*.cbz=38;5;133:*.
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 __command_exist () {
-    command -v $1 > /dev/null
+    command -v $1 &> /dev/null
     return $?
 }
 
@@ -130,8 +130,8 @@ __init_zsh_config () {
     alias lla="ls -la"
     alias lh="ls -lh"
 
-    local vmd=( /Applications/VMD*.app/Contents/Resources/VMD.app/Contents/MacOS/VMD )
-    [[ -f $vmd ]] && alias vmd="${vmd// /\\ }"
+    local vmd=$(setopt NULL_GLOB; echo /Applications/VMD*.app/Contents/Resources/VMD.app/Contents/MacOS/VMD)
+    [[ -n "$vmd" ]] && alias vmd="${vmd// /\\ }"
 
     __command_exist pbpaste && alias p=pbpaste
     __command_exist pbcopy && alias c=pbcopy
