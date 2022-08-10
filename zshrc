@@ -74,7 +74,7 @@ __init_history () {
 }
 
 __init_zinit () {
-    ZINIT_INIT=$ZSH_CONFIG_BASE/zinit/zinit.git/zinit.zsh
+    local ZINIT_INIT=$ZSH_CONFIG_BASE/zinit/zinit.git/zinit.zsh
     if [[ ! -f $ZINIT_INIT ]]; then
         ZINIT_HOME=~/.config/zsh/zinit NO_EDIT=1 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
     fi
@@ -130,7 +130,7 @@ __init_zsh_config () {
     alias lla="ls -la"
     alias lh="ls -lh"
 
-    vmd=( /Applications/VMD*.app/Contents/Resources/VMD.app/Contents/MacOS/VMD )
+    local vmd=( /Applications/VMD*.app/Contents/Resources/VMD.app/Contents/MacOS/VMD )
     [[ -f $vmd ]] && alias vmd="${vmd// /\\ }"
 
     __command_exist pbpaste && alias p=pbpaste
