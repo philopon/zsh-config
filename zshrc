@@ -38,13 +38,11 @@ __init_homebrew () {
 __peco_select_history () {
   BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER" --layout=bottom-up)
   CURSOR=$#BUFFER
-  zle clear-screen
 }
 
 __peco_ghq_repository () {
     BUFFER="cd $(ghq list --full-path | peco --query "$LBUFFER" --layout=bottom-up)"
     zle accept-line
-    zle clear-screen
 }
 
 __init_keybinds () {
