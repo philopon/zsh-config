@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+
+import argparse
+from zipfile import ZipFile
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-o', action='store_true', help="ignore")
+    parser.add_argument("PATH")
+    opts = parser.parse_args()
+
+    with ZipFile(opts.PATH) as z:
+        z.extractall()
+
+
+if __name__ == "__main__":
+    main()

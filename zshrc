@@ -84,6 +84,9 @@ __init_zinit () {
     zinit light zsh-users/zsh-autosuggestions
     zinit light zdharma-continuum/fast-syntax-highlighting
 
+    local original_path=($path[@])
+    path=($path[@] $ZSH_CONFIG_BASE/compat/python3)
+
     zinit ice from"gh-r" as"program" pick"*/peco"
     zinit light "peco/peco"
 
@@ -98,6 +101,8 @@ __init_zinit () {
 
     zinit ice from"gh-r" as"program" mv"direnv* -> direnv"
     zinit light "direnv/direnv"
+
+    local path=($original_path[@])
 }
 
 
