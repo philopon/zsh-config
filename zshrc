@@ -27,7 +27,7 @@ __init_homebrew () {
     fi
 
     if [[ -x /usr/local/bin/brew ]]; then
-        alias ibrew="arch -arch x86_64 /opt/homebrew/bin/brew"
+        alias ibrew="arch -arch x86_64 /usr/local/bin/brew"
         [[ "$(uname -p)" != "arm" ]] && alias brew=ibrew
     fi
 
