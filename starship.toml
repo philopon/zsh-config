@@ -1,0 +1,8 @@
+[python]
+pyenv_version_name = true
+
+[git_status]
+disabled = true
+
+[nodejs]
+symbol = "[⬢](green) "

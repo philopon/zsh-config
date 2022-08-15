@@ -124,7 +124,11 @@ __init_zsh_config () {
     compinit
     zstyle ':completion:*:default' menu select=1
 
-    __command_exist starship && eval "$(starship init zsh)"
+    if __command_exist starship; then
+        eval "$(starship init zsh)"
+        export STARSHIP_CONFIG=$ZSH_CONFIG_BASE/starship.toml
+    fi
+
     __command_exist exa && alias ls=exa
     
     alias l=ls
