@@ -108,11 +108,14 @@ __init_zinit () {
 
 
 __init_zsh_config () {
+    # ↑ low priority
     __push_paths \
+        /usr/local/bin \
         /opt/homebrew/opt/ambertools/bin \
         ~/.config/zsh/bin \
         ~/.cargo/bin \
         ~/.local/bin
+    # ↓ high priority
 
     __init_homebrew
     __init_history
