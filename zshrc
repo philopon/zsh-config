@@ -60,6 +60,8 @@ __init_keybinds () {
 }
 
 __init_history () {
+    export HISTFILE=~/.cache/zsh/history
+    mkdir -p $(dirname $HISTFILE)
     export HISTSIZE=1000
     export SAVEHIST=100000
     setopt hist_ignore_dups
